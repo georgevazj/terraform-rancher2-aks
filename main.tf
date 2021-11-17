@@ -1,4 +1,12 @@
 # Configure Rancher provider
+terraform {
+  required_providers {
+    rancher2 = {
+      source = "rancher/rancher2"
+    }
+  }
+}
+
 provider "rancher2" {
   alias = "admin"
 
@@ -17,7 +25,7 @@ resource "rancher2_cluster" "aks_cluster" {
   description = var.cluster_description
 
   aks_config_v2 {
-    cloud_credential_id = data.rancher2_cloud_credential.cred.id
+    cloud_credential_id = rancher2_cloud_credential.cred.id
     resource_group = var.resource_group
     resource_location = var.resource_location
     dns_prefix = var.cluster_name
