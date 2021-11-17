@@ -3,9 +3,14 @@ variable "api_url" {
   description = "(Required) Rancher API URL"
 }
 
-variable "token_key" {
+variable "access_key" {
   type = string
-  description = "(Required) Rancher API token key to connect to rancher. It can also be sourced from the RANCHER_TOKEN_KEY environment variable."
+  description = "(Required) Rancher Access Key"
+}
+
+variable "secret_key" {
+  type = string
+  description = "(Required) Rancher Secret Key"
 }
 
 # Azure credentials

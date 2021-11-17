@@ -8,10 +8,9 @@ terraform {
 }
 
 provider "rancher2" {
-  alias = "admin"
-
-  api_url = var.api_url
-  token_key = var.token_key
+  api_url = "https://sanes-rancher.westeurope.cloudapp.azure.com"
+  access_key = var.access_key
+  secret_key = var.secret_key
   insecure = true
 }
 
